@@ -6,6 +6,9 @@ from eshop.view.order_schemas import OrderCreateDtoSchema, OrderSchema, OrderGet
 
 app = Flask(__name__)
 
+@app.get("/")
+def root():
+    return {"message": "Eshop API is working. Use /api/v1/product or /api/v1/order"}
 
 @app.post("/api/v1/order")
 def order_create_endpoint():
